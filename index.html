@@ -9,57 +9,103 @@
     <script src="index.js" defer></script>
 
     <div class="wrapper">
-        <h1>Calculator</h1>
-        <input type="text" id="calculatorinput">
-        <div class="buttonswrapper">
-            <button class="numbers" onclick="getClicked('1')">1</button>
-            <button class="numbers" onclick="getClicked('2')">2</button>
-            <button class="numbers" onclick="getClicked('3')">3</button>
-            <button class="numbers" onclick="getClicked('4')">4</button>
-            <button class="numbers" onclick="getClicked('5')">5</button>
-            <button class="numbers" onclick="getClicked('6')">6</button>
-            <button class="numbers" onclick="getClicked('7')">7</button>
-            <button class="numbers" onclick="getClicked('8')">8</button>
-            <button class="numbers" onclick="getClicked('9')">9</button>
-        </div>
-        <div class="buttonssubmits">
-            <button onclick="getClicked('+')">+</button>
-            <button onclick="getClicked('-')">-</button>
-            <button onclick="getClicked('*')">x</button>
-            <button onclick="getClicked('/')">/</button>
-            <button class="resultbtn" onclick="getSubmit()">=</button>
+        <div class="container">
+            <input type="text" id="calculatorinput" placeholder="0">
+            <div class="interactionwrapper">
+                <div class="buttonswrapper">
+                    <button class="numbers resetcalc" onclick="resetCalculator()">AC</button>
+                    <button class="numbers" onclick="turnNegPos()">+/-</button>
+                    <button class="numbers" onclick="getClicked('7')">7</button>
+                    <button class="numbers" onclick="getClicked('8')">8</button>
+                    <button class="numbers" onclick="getClicked('9')">9</button>
+                    <button class="numbers" onclick="getClicked('4')">4</button>
+                    <button class="numbers" onclick="getClicked('5')">5</button>
+                    <button class="numbers" onclick="getClicked('6')">6</button>
+                    <button class="numbers" onclick="getClicked('1')">1</button>
+                    <button class="numbers" onclick="getClicked('2')">2</button>
+                    <button class="numbers" onclick="getClicked('3')">3</button>
+                    <button class="numbers" onclick="getClicked('0')">0</button>
+                    <button class="numbers" onclick="getClicked('.')">.</button>
+                </div>
+                <div class="buttonssubmits">
+                    <button class="expressionbtn" onclick="getClicked('+')">+</button>
+                    <button class="expressionbtn" onclick="getClicked('-')">-</button>
+                    <button class="expressionbtn" onclick="getClicked('*')">x</button>
+                    <button class="expressionbtn" onclick="getClicked('/')">/</button>
+                    <button class="expressionbtn" onclick="getSubmit()">=</button>
+                </div>
+            </div>
         </div>
      </div>
 </body>
 </html>
 
 <style>
+.resetcalc{
+    background: gray !important;
+    color: white;
+    font-size: 18px;
+}
+.container{
+    margin: 20px;
+}
+.expressionbtn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #f5aa21;
+    color: white;
+    font-size: 18px;
+}
+.interactionwrapper{
+    display: flex;
+}
 .wrapper{
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: auto;
-    background: #5e5e5e;
-    width: 160px;
+    background: #141212;
+    width: 300px;
+    height: 400px;
 }
 .numbers{
     width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 18px;
+    background: rgb(64 61 61);
 }
 .buttonswrapper{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 150px;
+    width: 80%;
     margin-top: 15px;
     gap: 5px;
+    align-items: center;
 }
 .buttonssubmits{
     margin-top: 5px;
-    width: 150px;
-}
-.resultbtn{
-    width: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 20%;
+    align-items: center;
 }
 #calculatorinput{
-    background: #299f29;
+    background: #141212;
+    width: 100%;
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-align: right;
+    font-size: 28px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+::placeholder{
+    color: white;
+    opacity: 1;
 }
 </style>
