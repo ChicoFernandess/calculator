@@ -26,23 +26,25 @@ function turnNegPos(){
 
     let lastOperatorIndex = Math.max(
         currentValue.lastIndexOf("+"),
-        currentValue.lastIndexOf("-"),
+        currentValue.lastIndexOf("−"),
         currentValue.lastIndexOf("*"),
         currentValue.lastIndexOf("/")
     );
 
-    // Extract the part of the string after the last operator
-    let beforeLastNumber = currentValue.slice(0, lastOperatorIndex + 1); // Part before the last number
-    let lastNumber = currentValue.slice(lastOperatorIndex + 1); // Part after the last operator
+    let beforeLastNumber = currentValue.slice(0, lastOperatorIndex + 1);
+    let lastNumber = currentValue.slice(lastOperatorIndex + 1);
 
     if (lastNumber.startsWith("-")) {
         // If the last number is negative, make it positive
         lastNumber = lastNumber.substring(1);
     } else {
         // If the last number is positive, make it negative
-        lastNumber = "-" + lastNumber;
+        lastNumber = "-" + lastNumber; 
     }
 
     // Rebuild the input value with the toggled last number
     elem.value = beforeLastNumber + lastNumber;
 }
+
+
+
