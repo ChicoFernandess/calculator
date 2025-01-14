@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <script src="index.js" defer></script>
+
+    <div class="wrapper">
+        <h1>Calculator</h1>
+        <input type="text" id="calculatorinput">
+        <div class="buttonswrapper">
+            <button class="numbers" onclick="getClicked('1')">1</button>
+            <button class="numbers" onclick="getClicked('2')">2</button>
+            <button class="numbers" onclick="getClicked('3')">3</button>
+            <button class="numbers" onclick="getClicked('4')">4</button>
+            <button class="numbers" onclick="getClicked('5')">5</button>
+            <button class="numbers" onclick="getClicked('6')">6</button>
+            <button class="numbers" onclick="getClicked('7')">7</button>
+            <button class="numbers" onclick="getClicked('8')">8</button>
+            <button class="numbers" onclick="getClicked('9')">9</button>
+        </div>
+        <div class="buttonssubmits">
+            <button onclick="getClicked('+')">+</button>
+            <button onclick="getClicked('-')">-</button>
+            <button onclick="getClicked('*')">x</button>
+            <button onclick="getClicked('/')">/</button>
+            <button class="resultbtn" onclick="getSubmit()">=</button>
+        </div>
+     </div>
+</body>
+</html>
+
+<style>
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    background: #5e5e5e;
+    width: 160px;
+}
+.numbers{
+    width: 40px;
+}
+.buttonswrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 150px;
+    margin-top: 15px;
+    gap: 5px;
+}
+.buttonssubmits{
+    margin-top: 5px;
+    width: 150px;
+}
+.resultbtn{
+    width: 55px;
+}
+#calculatorinput{
+    background: #299f29;
+}
+</style>
